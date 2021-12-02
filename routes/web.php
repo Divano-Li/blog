@@ -1,5 +1,5 @@
 <?php
-
+use App\Events\ExampleEvent;
 /** @var \Laravel\Lumen\Routing\Router $router */
 
 /*
@@ -15,5 +15,22 @@
 
 $router->get('/', function () use ($router) {
     return $router->app->version();
+});
+
+$router -> get('/hello', function () use ($router) {
+    $value = config('app.locale');
+    $config = app('config');
+    config(['app.aa' => 'aa']);
+    $environment = app() -> environment();
+    $debug = env('APP_DEBUG', 1);
+    $results = app('db')->select("SELECT * FROM threads");
+    event(new ExampleEvent);
+    $results = env('APP_DEBUG', 1);
+    $a = 1;
+    $threads = App\Models\Thread::all();
+    foreach ($threads as $thread) {
+        echo $thread->id;
+    }
+    return "hello";
 });
 

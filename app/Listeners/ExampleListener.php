@@ -26,6 +26,8 @@ class ExampleListener
      */
     public function handle(ExampleEvent $event)
     {
+        $a = 1;
+        $b = 2;
         //
     }
 }
