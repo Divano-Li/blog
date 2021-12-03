@@ -23,14 +23,16 @@ $router -> get('/hello', function () use ($router) {
     config(['app.aa' => 'aa']);
     $environment = app() -> environment();
     $debug = env('APP_DEBUG', 1);
-    $results = app('db')->select("SELECT * FROM threads");
+    //$results = app('db')->select("SELECT * FROM threads");
     event(new ExampleEvent);
     $results = env('APP_DEBUG', 1);
     $a = 1;
-    $threads = App\Models\Thread::all();
+    /*$threads = App\Models\Thread::all();
     foreach ($threads as $thread) {
         echo $thread->id;
-    }
+    }*/
     return "hello";
 });
+
+$router -> get('/hello/{id}', '\App\Http\Controllers\ExampleController@showYourCase');
 
