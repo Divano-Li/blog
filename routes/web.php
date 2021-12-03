@@ -34,5 +34,7 @@ $router -> get('/hello', function () use ($router) {
     return "hello";
 });
 
+$router -> get('/store/{name}', '\App\Http\Controllers\ExampleController@store');
+
 $router -> get('/hello/{id}', '\App\Http\Controllers\ExampleController@showYourCase');
 
