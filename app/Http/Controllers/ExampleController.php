@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
-use App\Models\Thread;
+use App\Models\Phone;
+use PhpParser\Builder\Class_;
 
 class ExampleController extends Controller
 {
@@ -45,6 +46,15 @@ class ExampleController extends Controller
         echo User::query() -> create(['name' => 'a', 'age' => 1]);
         echo PHP_EOL;
         return User::query() -> select(['name']) -> get();
+    }
+
+    public function eloquentOrmRelation() {
+        $phone = User::query()-> find(1) ->phone ->id;
+        echo $phone;
+
+        $user = Phone::query()-> find(1) -> user;
+        echo PHP_EOL;
+        echo $user;
     }
 
 

@@ -35,4 +35,8 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     protected  $dispatchesEvents = [
         'saved' => UserSaved::class
     ];
+
+    public function phone() {
+        return $this->hasOne('App\Models\Phone');
+    }
 }

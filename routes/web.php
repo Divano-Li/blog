@@ -27,7 +27,7 @@ $router -> get('/hello', function () use ($router) {
     event(new ExampleEvent);
     $results = env('APP_DEBUG', 1);
     $a = 1;
-    /*$threads = App\Models\Thread::all();
+    /*$threads = App\Models\Phone::all();
     foreach ($threads as $thread) {
         echo $thread->id;
     }*/
@@ -35,6 +35,7 @@ $router -> get('/hello', function () use ($router) {
 });
 
 $router -> get('/store/{name}', '\App\Http\Controllers\ExampleController@store');
+$router -> get('/getphone', '\App\Http\Controllers\ExampleController@eloquentOrmRelation');
 
 $router -> get('/hello/{id}', '\App\Http\Controllers\ExampleController@showYourCase');
 
